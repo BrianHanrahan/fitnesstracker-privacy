@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <title>FitnessTracker — Privacy Policy</title>
+    <style>
+        :root {
+            --text:       #1a1714;
+            --text-2:     #4a453f;
+            --text-3:     #8a8278;
+            --bg:         #faf7f2;
+            --bg-card:    #fff;
+            --accent:     #b86932;
+            --border:     #e6ddd0;
+            --rule:       #e6ddd0;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text:     #f2ece3;
+                --text-2:   #bab2a6;
+                --text-3:   #7a7168;
+                --bg:       #1c1816;
+                --bg-card:  #25201d;
+                --accent:   #d98a58;
+                --border:   #3a322c;
+                --rule:     #2c2622;
+            }
+        }
+
+        * { box-sizing: border-box; }
+        html, body { margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, "SF Pro Text", Georgia, "Times New Roman", serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+            padding: 32px 20px 64px;
+            max-width: 640px;
+            margin: 0 auto;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            border-bottom: 1px solid var(--rule);
+            padding-bottom: 20px;
+            margin-bottom: 28px;
+        }
+        h1 {
+            font-family: -apple-system, "SF Pro Display", Georgia, serif;
+            font-size: 26px;
+            font-weight: 700;
+            margin: 0 0 4px;
+            letter-spacing: -0.02em;
+        }
+        header .meta {
+            font-size: 13px;
+            color: var(--text-3);
+            font-variant-numeric: tabular-nums;
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 32px 0 10px;
+            letter-spacing: -0.01em;
+        }
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        p {
+            margin: 0 0 14px;
+            color: var(--text);
+        }
+        ul {
+            margin: 0 0 14px;
+            padding-left: 22px;
+        }
+        li {
+            margin-bottom: 6px;
+            color: var(--text);
+        }
+
+        .lede {
+            padding: 14px 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+            border-radius: 4px;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        code, .kbd {
+            font-family: "SF Mono", Menlo, monospace;
+            font-size: 0.92em;
+            background: var(--bg-card);
+            padding: 1px 5px;
+            border-radius: 3px;
+            border: 1px solid var(--border);
+        }
+
+        footer {
+            margin-top: 48px;
+            padding-top: 20px;
+            border-top: 1px solid var(--rule);
+            font-size: 13px;
+            color: var(--text-3);
+        }
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Privacy Policy</h1>
+    <div class="meta">FitnessTracker iOS · Last updated 2026-04-20</div>
+</header>
+
+<p class="lede">
+    We don't collect your data. The app stores everything on your iPhone
+    and your personal iCloud account. There is no server, no account, no
+    analytics, no tracking.
+</p>
+
+<h2>What we store on your device</h2>
+<ul>
+    <li>The workouts you log — sets, reps, weights, RPE, session notes, timestamps.</li>
+    <li>Your preferences — session duration, goals, equipment, training phase, age and body weight if you provide them.</li>
+    <li>The exercise library seeded with the app, plus any per-exercise overrides you set.</li>
+</ul>
+
+<h2>Where this data lives</h2>
+<ul>
+    <li>On your iPhone, in the app's private sandbox. No other app can read it.</li>
+    <li>Optionally replicated to your personal iCloud via Apple's key-value store — only your Apple ID can read or write it. We have no access to iCloud content.</li>
+</ul>
+
+<h2>What we don't do</h2>
+<ul>
+    <li>We don't run a server. There is no "our backend."</li>
+    <li>We don't collect analytics. No Firebase, no Mixpanel, no custom telemetry.</li>
+    <li>We don't embed advertising SDKs.</li>
+    <li>We don't request your email, phone number, or account.</li>
+    <li>We don't share your data with third parties.</li>
+</ul>
+
+<h2>Apple Health / HealthKit</h2>
+<p>
+    If you enable the optional "Sync with Apple Health" setting, the app
+    writes completed workouts (type, duration, total volume, estimated
+    calories) into your Health database. The app also reads workouts it
+    previously wrote — scoped to its own source only — so it can update
+    them when you change your body weight or other inputs. It never reads
+    workouts other apps created.
+</p>
+<p>
+    All of this data stays on your device under your control via Apple's
+    Health permissions. You can revoke access at any time in
+    <code>iOS Settings → Privacy &amp; Security → Health → FitnessTracker</code>.
+</p>
+
+<h2>Data export and deletion</h2>
+<p>
+    <strong>Export.</strong> Settings → Export Data gives you every byte
+    the app holds as a JSON file.
+</p>
+<p>
+    <strong>Delete.</strong> Settings → Reset All Data deletes everything
+    from your device and from your iCloud key-value store. There is
+    nothing for us to delete on our side because we never had a copy.
+</p>
+
+<h2>Children's privacy</h2>
+<p>
+    The app is not directed at children under 13 and does not knowingly
+    collect data from them.
+</p>
+
+<h2>Crash reports</h2>
+<p>
+    If you choose to send anonymous crash reports to Apple via
+    <code>iOS Settings → Privacy &amp; Security → Analytics &amp; Improvements</code>,
+    those reports go to Apple, not to us. We receive only the anonymous
+    aggregated reports Apple surfaces in developer tools.
+</p>
+
+<h2>Changes to this policy</h2>
+<p>
+    If the app ever starts collecting anything new, we will update this
+    page and note the change in a release note. We will not retroactively
+    apply any new collection policy to data already on your device.
+</p>
+
+<h2>Contact</h2>
+<p>
+    Questions about this policy: open an issue at the public repository
+    where this document lives, or email the developer.
+</p>
+
+<footer>
+    This is the in-app version of the privacy policy. A publicly-hosted
+    mirror lives alongside the App Store listing.
+</footer>
+
+</body>
+</html>

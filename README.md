@@ -1,8 +1,12 @@
-# FitnessTracker Privacy Policy
+# FitnessTracker — Public Web
 
-Publicly-hosted mirror of the privacy policy for the FitnessTracker iOS app.
+Two public pages for the FitnessTracker iOS app:
 
-- Live page: <https://brianhanrahan.github.io/fitnesstracker-privacy/>
-- The in-app copy of this document lives in the main (private) FitnessTracker-IOS repo and is bundled into the app so users can read it offline.
+| Path | Purpose |
+|---|---|
+| [`/`](https://brianhanrahan.github.io/fitnesstracker-privacy/) | Landing page — positioning, three differentiators, how the algorithm works |
+| [`/privacy/`](https://brianhanrahan.github.io/fitnesstracker-privacy/privacy/) | Privacy policy — same text that ships bundled in-app; this is the URL Apple requires for the App Store listing |
 
-This repo contains only the privacy policy. No app code.
+Served via GitHub Pages. This repo contains only the static HTML + CSS for these two pages — no app code.
+
+The in-app copies of both (well, the privacy policy at least) live in the main FitnessTracker-IOS repo bundled as package resources so users can read them offline.

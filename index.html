@@ -2,213 +2,511 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light dark">
-    <title>FitnessTracker — Privacy Policy</title>
+    <title>FitnessTracker — Adaptive strength training, on your terms</title>
+    <meta name="description" content="A workout planner that adapts to how your body actually feels. Built on the Banister fitness-fatigue model. No account, no server, no tracking.">
+
+    <!-- Open Graph / social preview -->
+    <meta property="og:title" content="FitnessTracker — Adaptive strength training">
+    <meta property="og:description" content="Built on the same fitness-fatigue science elite coaches use. Runs entirely on your iPhone. Never sells your data.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://brianhanrahan.github.io/fitnesstracker-privacy/">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <style>
         :root {
-            --text:       #1a1714;
-            --text-2:     #4a453f;
-            --text-3:     #8a8278;
-            --bg:         #faf7f2;
-            --bg-card:    #fff;
+            --ink:        #1a1512;
+            --ink-2:      #4a3f35;
+            --ink-3:      #8a7d6e;
+            --paper:      #f7f1e6;
+            --paper-warm: #efe6d5;
+            --card:       #fffcf6;
             --accent:     #b86932;
-            --border:     #e6ddd0;
-            --rule:       #e6ddd0;
+            --accent-ink: #7a4019;
+            --rule:       #d9ccb5;
         }
         @media (prefers-color-scheme: dark) {
             :root {
-                --text:     #f2ece3;
-                --text-2:   #bab2a6;
-                --text-3:   #7a7168;
-                --bg:       #1c1816;
-                --bg-card:  #25201d;
-                --accent:   #d98a58;
-                --border:   #3a322c;
-                --rule:     #2c2622;
+                --ink:        #f4ebd9;
+                --ink-2:      #c3b6a0;
+                --ink-3:      #7a6e5c;
+                --paper:      #1a1510;
+                --paper-warm: #221b14;
+                --card:       #251e16;
+                --accent:     #e89456;
+                --accent-ink: #f5b789;
+                --rule:       #3a2f24;
             }
         }
 
-        * { box-sizing: border-box; }
-        html, body { margin: 0; padding: 0; }
-
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: -apple-system, "SF Pro Text", Georgia, "Times New Roman", serif;
-            font-size: 16px;
-            line-height: 1.6;
-            color: var(--text);
-            background: var(--bg);
-            padding: 32px 20px 64px;
-            max-width: 640px;
-            margin: 0 auto;
+            font-family: "Inter", -apple-system, system-ui, sans-serif;
+            font-feature-settings: "ss01", "ss02", "cv01", "cv11";
+            background: var(--paper);
+            color: var(--ink);
+            line-height: 1.55;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
-        header {
-            border-bottom: 1px solid var(--rule);
-            padding-bottom: 20px;
-            margin-bottom: 28px;
+        /* ─── shell ───────────────────────────────────────────────── */
+        .wrap {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 28px;
         }
+
+        /* ─── hero ────────────────────────────────────────────────── */
+        .hero {
+            padding: 96px 0 72px;
+            position: relative;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0; right: 0;
+            width: 60%;
+            height: 100%;
+            background: radial-gradient(ellipse at top right, var(--paper-warm) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .hero-inner { position: relative; z-index: 1; }
+
+        .eyebrow {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--accent-ink);
+            margin-bottom: 20px;
+            padding: 5px 12px;
+            border: 1px solid var(--accent);
+            border-radius: 999px;
+            background: color-mix(in srgb, var(--accent) 8%, transparent);
+        }
+
         h1 {
-            font-family: -apple-system, "SF Pro Display", Georgia, serif;
-            font-size: 26px;
+            font-size: clamp(42px, 7vw, 76px);
             font-weight: 700;
-            margin: 0 0 4px;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.035em;
+            line-height: 0.98;
+            margin-bottom: 28px;
+            max-width: 18ch;
         }
-        header .meta {
-            font-size: 13px;
-            color: var(--text-3);
-            font-variant-numeric: tabular-nums;
-        }
-
-        h2 {
-            font-size: 18px;
-            font-weight: 700;
-            margin: 32px 0 10px;
-            letter-spacing: -0.01em;
-        }
-        h2:first-of-type {
-            margin-top: 0;
-        }
-
-        p {
-            margin: 0 0 14px;
-            color: var(--text);
-        }
-        ul {
-            margin: 0 0 14px;
-            padding-left: 22px;
-        }
-        li {
-            margin-bottom: 6px;
-            color: var(--text);
+        h1 em {
+            font-style: normal;
+            color: var(--accent);
         }
 
         .lede {
-            padding: 14px 16px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-left: 4px solid var(--accent);
-            border-radius: 4px;
-            color: var(--text);
-            font-weight: 500;
+            font-size: clamp(17px, 1.6vw, 19px);
+            color: var(--ink-2);
+            max-width: 54ch;
+            margin-bottom: 36px;
+            line-height: 1.55;
         }
 
-        code, .kbd {
-            font-family: "SF Mono", Menlo, monospace;
-            font-size: 0.92em;
-            background: var(--bg-card);
-            padding: 1px 5px;
-            border-radius: 3px;
-            border: 1px solid var(--border);
+        .cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 22px;
+            background: var(--ink);
+            color: var(--paper);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            border-radius: 10px;
+            transition: transform 0.12s ease, box-shadow 0.12s ease;
+            box-shadow: 0 1px 0 rgba(0,0,0,0.08);
         }
-
-        footer {
-            margin-top: 48px;
-            padding-top: 20px;
-            border-top: 1px solid var(--rule);
+        .cta:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(184, 105, 50, 0.18); }
+        .cta .arrow { transition: transform 0.2s ease; }
+        .cta:hover .arrow { transform: translateX(3px); }
+        .cta-note {
             font-size: 13px;
-            color: var(--text-3);
+            color: var(--ink-3);
+            margin-left: 14px;
+        }
+
+        /* ─── signature constants ─────────────────────────────────── */
+        .signature {
+            margin-top: 76px;
+            padding: 40px 0;
+            border-top: 1px solid var(--rule);
+            border-bottom: 1px solid var(--rule);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        @media (max-width: 720px) {
+            .signature { grid-template-columns: repeat(2, 1fr); gap: 32px 16px; }
+        }
+        .stat {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .stat-value {
+            font-size: 34px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            font-variant-numeric: tabular-nums;
+            color: var(--ink);
+        }
+        .stat-value sub {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--ink-3);
+            letter-spacing: normal;
+            vertical-align: baseline;
+            margin-left: 2px;
+        }
+        .stat-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--ink-3);
+            font-weight: 600;
+        }
+
+        /* ─── pillars ─────────────────────────────────────────────── */
+        .pillars {
+            padding: 96px 0 64px;
+        }
+        .section-head {
+            margin-bottom: 52px;
+            max-width: 60ch;
+        }
+        .section-label {
+            font-size: 11px;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: var(--accent-ink);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-size: clamp(26px, 3.6vw, 38px);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        .pillar-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--rule);
+            border: 1px solid var(--rule);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        @media (max-width: 760px) {
+            .pillar-grid { grid-template-columns: 1fr; }
+        }
+        .pillar {
+            background: var(--card);
+            padding: 32px 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .pillar-num {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--accent);
+            font-variant-numeric: tabular-nums;
+            letter-spacing: 0.08em;
+        }
+        .pillar-title {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+        }
+        .pillar-body {
+            font-size: 14.5px;
+            color: var(--ink-2);
+            line-height: 1.6;
+        }
+
+        /* ─── quote / mid-page callout ───────────────────────────── */
+        .callout {
+            padding: 80px 0;
+            text-align: center;
+        }
+        .callout blockquote {
+            font-size: clamp(22px, 3.2vw, 32px);
+            font-weight: 500;
+            letter-spacing: -0.018em;
+            line-height: 1.35;
+            color: var(--ink);
+            max-width: 24ch;
+            margin: 0 auto 18px;
+            position: relative;
+        }
+        .callout blockquote::before {
+            content: "";
+            display: block;
+            width: 32px;
+            height: 2px;
+            background: var(--accent);
+            margin: 0 auto 24px;
+        }
+        .callout cite {
+            font-size: 13px;
+            color: var(--ink-3);
+            font-style: normal;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        /* ─── how it works ───────────────────────────────────────── */
+        .how {
+            padding: 80px 0;
+            border-top: 1px solid var(--rule);
+        }
+        .how-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 72px;
+            align-items: start;
+        }
+        @media (max-width: 820px) {
+            .how-grid { grid-template-columns: 1fr; gap: 40px; }
+        }
+        .how-body p {
+            color: var(--ink-2);
+            font-size: 15.5px;
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+        .how-body code {
+            font-family: "SF Mono", Menlo, monospace;
+            font-size: 0.9em;
+            background: var(--paper-warm);
+            padding: 1px 6px;
+            border-radius: 3px;
+            color: var(--ink);
+        }
+
+        /* ─── trust row ──────────────────────────────────────────── */
+        .trust {
+            padding: 76px 0;
+            border-top: 1px solid var(--rule);
+        }
+        .trust-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px 40px;
+            list-style: none;
+        }
+        @media (max-width: 640px) { .trust-list { grid-template-columns: 1fr; } }
+        .trust-list li {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            color: var(--ink-2);
+            font-size: 14.5px;
+            line-height: 1.55;
+        }
+        .trust-list .check {
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: var(--card);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 900;
+            margin-top: 2px;
+        }
+
+        /* ─── footer ─────────────────────────────────────────────── */
+        footer {
+            padding: 48px 0 72px;
+            border-top: 1px solid var(--rule);
+            color: var(--ink-3);
+            font-size: 13px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
         }
         footer a {
-            color: var(--accent);
+            color: var(--ink-2);
             text-decoration: none;
+            border-bottom: 1px solid var(--rule);
+            padding-bottom: 1px;
+            transition: color 0.12s ease;
         }
+        footer a:hover { color: var(--accent); border-color: var(--accent); }
+        footer nav { display: flex; gap: 24px; }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Privacy Policy</h1>
-    <div class="meta">FitnessTracker iOS · Last updated 2026-04-20</div>
-</header>
+<div class="wrap">
 
-<p class="lede">
-    We don't collect your data. The app stores everything on your iPhone
-    and your personal iCloud account. There is no server, no account, no
-    analytics, no tracking.
-</p>
+    <section class="hero">
+        <div class="hero-inner">
+            <span class="eyebrow">Serious lifters · iOS</span>
+            <h1>A workout planner that <em>adapts</em> to how your body actually feels.</h1>
+            <p class="lede">
+                Built on the Banister fitness-fatigue model — the same
+                science elite coaches use — FitnessTracker reads your
+                training history and prescribes today's session against
+                your real recovery state. Runs entirely on your iPhone.
+                Never sells your data. No subscription.
+            </p>
+            <a class="cta" href="#app-store">
+                On the App Store soon
+                <span class="arrow">→</span>
+            </a>
+            <span class="cta-note">Launching 2026 · in review</span>
 
-<h2>What we store on your device</h2>
-<ul>
-    <li>The workouts you log — sets, reps, weights, RPE, session notes, timestamps.</li>
-    <li>Your preferences — session duration, goals, equipment, training phase, age and body weight if you provide them.</li>
-    <li>The exercise library seeded with the app, plus any per-exercise overrides you set.</li>
-</ul>
+            <div class="signature">
+                <div class="stat">
+                    <div class="stat-value">42<sub>d</sub></div>
+                    <div class="stat-label">τ fitness</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">7<sub>d</sub></div>
+                    <div class="stat-label">τ fatigue</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">5</div>
+                    <div class="stat-label">scoring factors</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">third-party SDKs</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<h2>Where this data lives</h2>
-<ul>
-    <li>On your iPhone, in the app's private sandbox. No other app can read it.</li>
-    <li>Optionally replicated to your personal iCloud via Apple's key-value store — only your Apple ID can read or write it. We have no access to iCloud content.</li>
-</ul>
+    <section class="pillars">
+        <div class="section-head">
+            <div class="section-label">Three things most apps don't do</div>
+            <h2 class="section-title">Built for lifters who want to see the algorithm — not a black box.</h2>
+        </div>
 
-<h2>What we don't do</h2>
-<ul>
-    <li>We don't run a server. There is no "our backend."</li>
-    <li>We don't collect analytics. No Firebase, no Mixpanel, no custom telemetry.</li>
-    <li>We don't embed advertising SDKs.</li>
-    <li>We don't request your email, phone number, or account.</li>
-    <li>We don't share your data with third parties.</li>
-</ul>
+        <div class="pillar-grid">
+            <article class="pillar">
+                <div class="pillar-num">01</div>
+                <h3 class="pillar-title">Fitness-fatigue model, live.</h3>
+                <p class="pillar-body">
+                    Every session you log feeds a dual-factor Banister
+                    model — the same framework used in elite sports
+                    science — to compute a per-muscle form score. The
+                    planner reads those scores and picks exercises that
+                    match your current readiness. Transparent math.
+                    Re-derivable.
+                </p>
+            </article>
+            <article class="pillar">
+                <div class="pillar-num">02</div>
+                <h3 class="pillar-title">RPE-driven overload.</h3>
+                <p class="pillar-body">
+                    Rate of Perceived Exertion is a first-class input.
+                    RPE 7 → add weight. RPE 9 → hold. RPE 10 → reduce.
+                    It's the autoregulation framework powerlifters and
+                    strength coaches trust — not reps-in-reserve buried
+                    in a weight-displacement proxy.
+                </p>
+            </article>
+            <article class="pillar">
+                <div class="pillar-num">03</div>
+                <h3 class="pillar-title">Local-first. No account.</h3>
+                <p class="pillar-body">
+                    Your data lives on your iPhone and your personal
+                    iCloud. Optional Apple Health sync. No server, no
+                    account to create, no analytics, no advertising
+                    SDKs. You can export everything the app holds as
+                    JSON in two taps.
+                </p>
+            </article>
+        </div>
+    </section>
 
-<h2>Apple Health / HealthKit</h2>
-<p>
-    If you enable the optional "Sync with Apple Health" setting, the app
-    writes completed workouts (type, duration, total volume, estimated
-    calories) into your Health database. The app also reads workouts it
-    previously wrote — scoped to its own source only — so it can update
-    them when you change your body weight or other inputs. It never reads
-    workouts other apps created.
-</p>
-<p>
-    All of this data stays on your device under your control via Apple's
-    Health permissions. You can revoke access at any time in
-    <code>iOS Settings → Privacy &amp; Security → Health → FitnessTracker</code>.
-</p>
+    <section class="callout">
+        <blockquote>
+            Most apps log your workouts.<br>
+            This one understands them.
+        </blockquote>
+        <cite>— the positioning, plainly</cite>
+    </section>
 
-<h2>Data export and deletion</h2>
-<p>
-    <strong>Export.</strong> Settings → Export Data gives you every byte
-    the app holds as a JSON file.
-</p>
-<p>
-    <strong>Delete.</strong> Settings → Reset All Data deletes everything
-    from your device and from your iCloud key-value store. There is
-    nothing for us to delete on our side because we never had a copy.
-</p>
+    <section class="how">
+        <div class="how-grid">
+            <div class="section-head" style="margin-bottom: 0;">
+                <div class="section-label">How it works</div>
+                <h2 class="section-title">The math, one paragraph.</h2>
+            </div>
+            <div class="how-body">
+                <p>
+                    The planner scores every available exercise as
+                    <code>muscleNeed × recoveryReadiness × goalAlignment × variety × balanceCorrection</code>.
+                    Recovery readiness comes from the Banister model
+                    (<code>τ<sub>fitness</sub>=42d</code>,
+                    <code>τ<sub>fatigue</sub>=7d</code>). Goal alignment
+                    is your explicit emphasis boost. Balance correction
+                    nudges toward the weaker side of push/pull,
+                    upper/lower, and anterior/posterior pairs.
+                </p>
+                <p>
+                    Then a greedy fill with saturation re-ranking
+                    prevents any single muscle from dominating the
+                    session. Your intensity mode — push, normal, light,
+                    deload — is computed from your form score, not
+                    guessed at.
+                </p>
+                <p>
+                    Every step is visible in the in-app "How It Works"
+                    screen. Nothing proprietary. No black box.
+                </p>
+            </div>
+        </div>
+    </section>
 
-<h2>Children's privacy</h2>
-<p>
-    The app is not directed at children under 13 and does not knowingly
-    collect data from them.
-</p>
+    <section class="trust" id="app-store">
+        <div class="section-head">
+            <div class="section-label">What you're not getting</div>
+            <h2 class="section-title">Because we don't think you should have to pay for it.</h2>
+        </div>
+        <ul class="trust-list">
+            <li><span class="check">✓</span> No account creation. The app opens and starts working.</li>
+            <li><span class="check">✓</span> No analytics SDKs. Not Firebase, not Mixpanel, not anything else.</li>
+            <li><span class="check">✓</span> No advertising. The app never shows an ad.</li>
+            <li><span class="check">✓</span> No subscription. One-time purchase, then the app is yours.</li>
+            <li><span class="check">✓</span> No server. There is no "our backend." Your data stays on your phone.</li>
+            <li><span class="check">✓</span> Export everything as JSON whenever you want. Leave anytime.</li>
+        </ul>
+    </section>
 
-<h2>Crash reports</h2>
-<p>
-    If you choose to send anonymous crash reports to Apple via
-    <code>iOS Settings → Privacy &amp; Security → Analytics &amp; Improvements</code>,
-    those reports go to Apple, not to us. We receive only the anonymous
-    aggregated reports Apple surfaces in developer tools.
-</p>
+    <footer>
+        <div>© 2026 · Built by one developer who wanted a planner that wasn't a black box.</div>
+        <nav>
+            <a href="./privacy/">Privacy</a>
+            <a href="mailto:brian.hanrahan@gmail.com">Contact</a>
+        </nav>
+    </footer>
 
-<h2>Changes to this policy</h2>
-<p>
-    If the app ever starts collecting anything new, we will update this
-    page and note the change in a release note. We will not retroactively
-    apply any new collection policy to data already on your device.
-</p>
-
-<h2>Contact</h2>
-<p>
-    Questions about this policy: open an issue at the public repository
-    where this document lives, or email the developer.
-</p>
-
-<footer>
-    This is the in-app version of the privacy policy. A publicly-hosted
-    mirror lives alongside the App Store listing.
-</footer>
+</div>
 
 </body>
 </html>
